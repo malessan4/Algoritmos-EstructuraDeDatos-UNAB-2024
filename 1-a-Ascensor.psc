@@ -1,3 +1,10 @@
+"""
+1. Escribir un algoritmo que solucionen los siguientes problemas:
+a. Subir en ascensor al piso X.
+"""
+
+
+
 Algoritmo Ascensor
 	
 	Definir piso_actual Como Entero

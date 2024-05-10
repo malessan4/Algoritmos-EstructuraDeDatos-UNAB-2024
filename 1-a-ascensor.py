@@ -1,3 +1,8 @@
+"""
+1. Escribir un algoritmo que solucionen los siguientes problemas:
+a. Subir en ascensor al piso X.
+"""
+
 pisoActual = int(input("Ingrese el piso actual del ascensor: "))
 pisoDestino = int(input("Ingrese el piso de destino: "))
 
