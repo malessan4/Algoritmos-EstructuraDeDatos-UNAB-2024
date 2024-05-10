@@ -1,0 +1,4 @@
+Algoritmo Lavamanos
+	
+	
+FinAlgoritmo
