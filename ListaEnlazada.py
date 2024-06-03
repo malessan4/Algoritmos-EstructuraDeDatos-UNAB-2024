@@ -51,6 +51,19 @@ class ListaEnlazada:
                     if nodo_temporal.dato == valor:
                         return posicion
             raise Exception("Valor no encontrado")
+    
+    # Devuelve y remueve el primer elemento
+    def remuevePrimerElemento(self):
+        if self.primero is None:
+            raise Exception("La lista esta vacia")
+        else:
+            nodo = self.primero
+            self.primero = self.primero.next
+            self.len -= 1
+            print(f"Elemento removido: {nodo.dato}")
+            return nodo  
+
+
         
 # si el primer elemento es distino de None, crea una variable que va a ir almacenando las representaciones de la lista        
 # y usa una variabe llamada nodo que es la que va ir recorriendo cada uno los nodos creados en la lista   
@@ -100,10 +113,23 @@ my_lista.insertarAlFinal(nodo_z)
 nodo_a = Nodo(2)
 my_lista.insertarAlInicio(nodo_a)
 
-print (my_lista.len)
+
 print(my_lista)
-
-
-
-
+print(f"La longitud de la lista es: {my_lista.len}")
 print(f"Posición del elemento 9: {my_lista.posicionElemento(9)}")
+print(" ")
+
+my_lista.remuevePrimerElemento()
+print(my_lista)
+print(f"La longitud de la lista es: {my_lista.len}")
+print(" ")
+
+my_lista.remuevePrimerElemento()
+print(my_lista)
+print(f"La longitud de la lista es: {my_lista.len}")
+print(" ")
+
+my_lista.remuevePrimerElemento()
+print(my_lista)
+print(f"La longitud de la lista es: {my_lista.len}")
+print(" ")
