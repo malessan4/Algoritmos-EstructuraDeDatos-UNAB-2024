@@ -11,7 +11,6 @@ class ListaEnlazada:
     def insertarAlInicio(self, nodo):
         if self.primero is None:
             self.primero = nodo
-            return
         else:
             nuevo_nodo = self.primero # podemos ponerle de  nombre nodo temporal
             self.primero = nodo
@@ -44,7 +43,8 @@ class ListaEnlazada:
             
                     
 my_lista = ListaEnlazada()
-print (my_lista.len)
+print(my_lista.len)
+print(my_lista)
 
 
 # lista en 0
@@ -55,5 +55,8 @@ my_lista.insertarAlInicio(nodo_x) # invoco el metodo para insertar y le inserto 
 nodo_y = Nodo(9)
 my_lista.insertarAlInicio(nodo_y)
 
-print (my_lista.len)
+nodo_z = Nodo(4)
+my_lista.insertarAlInicio(nodo_z)
 
+print (my_lista.len)
+print(my_lista)
