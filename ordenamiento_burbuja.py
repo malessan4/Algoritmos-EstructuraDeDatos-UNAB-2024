@@ -17,6 +17,7 @@ lista1[len(lista1)-1]
 
 for i in range(0, len(lista1)):
     print(i, lista1[i])
+    
 """
     
 lista2 = [8, 5, -1, 6, 3, 4, -6, 0]
