@@ -40,7 +40,6 @@ class ListaEnlazada:
         if self.primero is None:
             raise Exception("Lista Vacia")
         else:
-            encontrado = False
             posicion = 0
             if self.primero.dato == valor:
                 return posicion
@@ -51,6 +50,7 @@ class ListaEnlazada:
                     posicion += 1
                     if nodo_temporal.dato == valor:
                         return posicion
+            raise Exception("Valor no encontrado")
         
 # si el primer elemento es distino de None, crea una variable que va a ir almacenando las representaciones de la lista        
 # y usa una variabe llamada nodo que es la que va ir recorriendo cada uno los nodos creados en la lista   
@@ -106,4 +106,4 @@ print(my_lista)
 
 
 
-print(f"Posición del elemento 1: {my_lista.posicionElemento(1)}")
+print(f"Posición del elemento 9: {my_lista.posicionElemento(9)}")
