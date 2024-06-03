@@ -1,5 +1,5 @@
-
 # Ordenamiento por insercion
+
 def ordenamineto_por_insercion(lista_desordenada):
     for i in range(1, len(lista_desordenada)):
         j = i-1
