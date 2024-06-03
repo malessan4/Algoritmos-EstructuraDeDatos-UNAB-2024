@@ -57,20 +57,34 @@ class ListaEnlazada:
         if self.primero is None:
             raise Exception("La lista esta vacia")
         else:
-            nodo = self.primero
+            nodo_temporal = self.primero
             self.primero = self.primero.next
             self.len -= 1
-            print(f"Elemento removido: {nodo.dato}")
-            return nodo  
-
-
+            print(f"Elemento removido: {nodo_temporal.dato}")
+            return nodo_temporal
         
+    def remueveUltimoElemento(self):
+        if self.primero is None:
+            raise Exception("La lista esta vacia")
+        else:
+            
+        
+    def remueveElemento(self, valor):
+        pass
+    
+    def remueveIndice(self, indice):
+        pass
+    
+    def elementoPorIndice(self, indice):
+        pass
+
 # si el primer elemento es distino de None, crea una variable que va a ir almacenando las representaciones de la lista        
 # y usa una variabe llamada nodo que es la que va ir recorriendo cada uno los nodos creados en la lista   
 # se guarda el primero y a la lista le agrego el dato del primer nodo
 # despues se pregunta, tengo siguiente? 
 # si tiene siguiente me paso al sigiuente nodo, le agrego un espacio, le inserto el dato del nuevo nodo y pregunta nuevamente  
 # si no tiene siguiente se cierra la lista con un corchete  
+
 
 # Representacion en forma de string de la ListaEnlazada                
     def __str__(self):
