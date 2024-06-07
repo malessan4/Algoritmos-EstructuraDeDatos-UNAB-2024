@@ -62,21 +62,30 @@ class ListaEnlazada:
             self.len -= 1
             print(f"Elemento removido: {nodo_temporal.dato}")
             return nodo_temporal
-        
+    
     def remueveUltimoElemento(self):
+        # Caso "la lista esta vacia"
         if self.primero is None:
             raise Exception("La lista esta vacia")
-        else:
-            
         
-    def remueveElemento(self, valor):
-        pass
-    
-    def remueveIndice(self, indice):
-        pass
-    
-    def elementoPorIndice(self, indice):
-        pass
+        # Caso "Si el primer nodo apunta a nada"
+        if self.primero.next is None:
+            nodo_a_devolver = self.primero
+            self.primero = None
+            self.len -= 1
+            print(f"Elemento removido: {nodo_a_devolver.dato}")
+            return nodo_a_devolver
+
+        # Sino se posiciona en el primero y empieza a preguntar
+        nodo_temporal = self.primero
+        while nodo_temporal.next.next is not None: # si el siguiente del siguiente no es none
+            nodo_temporal = nodo_temporal.next # lo corre una posicion y vuelve a preguntar
+        nodo_a_devolver = nodo_temporal.next #  lo inserta en el nodo_a_devolver
+        nodo_temporal.next = None # hago que el ultimo no apunte a nada
+        self.len -= 1 # le resto uno a la longitud de la lista
+        print(f"Elemento removido: {nodo_a_devolver.dato}")
+        return nodo_a_devolver
+
 
 # si el primer elemento es distino de None, crea una variable que va a ir almacenando las representaciones de la lista        
 # y usa una variabe llamada nodo que es la que va ir recorriendo cada uno los nodos creados en la lista   
@@ -86,7 +95,8 @@ class ListaEnlazada:
 # si no tiene siguiente se cierra la lista con un corchete  
 
 
-# Representacion en forma de string de la ListaEnlazada                
+# Representacion en forma de string de la ListaEnlazada    
+            
     def __str__(self):
         if self.primero is None: 
             return "[]"
@@ -128,22 +138,25 @@ nodo_a = Nodo(2)
 my_lista.insertarAlInicio(nodo_a)
 
 
+# para mostar el estado de la lista y la posicion de un elemento dado
 print(my_lista)
 print(f"La longitud de la lista es: {my_lista.len}")
 print(f"Posición del elemento 9: {my_lista.posicionElemento(9)}")
 print(" ")
 
-my_lista.remuevePrimerElemento()
+
+# lineas para ejecutar los metodos
+
+my_lista.remueveUltimoElemento()
 print(my_lista)
 print(f"La longitud de la lista es: {my_lista.len}")
 print(" ")
+
+
 
 my_lista.remuevePrimerElemento()
 print(my_lista)
 print(f"La longitud de la lista es: {my_lista.len}")
 print(" ")
 
-my_lista.remuevePrimerElemento()
-print(my_lista)
-print(f"La longitud de la lista es: {my_lista.len}")
-print(" ")
+
